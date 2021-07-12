@@ -62,7 +62,7 @@ const getData = () => {
 }
 
 const showData = async () => {
-    axios.get('/api/daily-outcome')
+    await axios.get('/api/daily-outcome')
         .then(response => {
             let data = response.data.data;
             

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MonthlyIncome extends Controller
+class MonthlyIncomeController extends Controller
 {
     public function __construct()
     {

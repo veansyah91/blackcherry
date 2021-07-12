@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\api\DailyIncomeController;
 use App\Http\Controllers\api\DailyOutcomeController;
 use App\Http\Controllers\api\InvoiceDetailController;
+use App\Http\Controllers\api\MonthlyIncomeController;
 use App\Http\Controllers\api\MonthlyOutcomeController;
 
 /*
@@ -73,6 +74,10 @@ Route::delete('/get-invoice-detail/{invoiceDetail}',[InvoiceDetailController::cl
 Route::get('/daily-income',[DailyIncomeController::class, 'index']);
 Route::get('/count-daily-income',[DailyIncomeController::class, 'countData']);
 Route::put('/daily-income',[DailyIncomeController::class, 'update']);
+
+// api monthly income
+Route::get('/monthly-income', [MonthlyIncomeController::class, 'index']);
+Route::put('/monthly-income', [MonthlyIncomeController::class, 'update']);
 
 // api user
 Route::get('/user', [UserController::class, 'index']);
