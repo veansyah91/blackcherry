@@ -77,7 +77,7 @@
                                 </li>
                             @endif
                         @else
-                            {{-- @role("admin") --}}
+                            @role("admin")
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle{{ request()->is('user/*') ? ' active' :'' }}{{ request()->is('role') ? ' active' :'' }}" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         Pengguna
@@ -95,7 +95,7 @@
                                         </a>
                                     </div>
                                 </li>
-                            {{-- @endrole --}}
+                            @endrole
                             
                             <li class="nav-item dropdown">
                                 
