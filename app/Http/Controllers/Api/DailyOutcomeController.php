@@ -39,14 +39,13 @@ class DailyOutcomeController extends Controller
             $newDailyOutcome[$i]->keterangan = $dailyOutcome->keterangan;
             $newDailyOutcome[$i]->tanggal = $dailyOutcome->tanggal;
 
-
             $i++;
 
         }
 
         $response = [
             'message' => 'Berhasil Mengambil Data Pengeluaran',
-            'data' => $dailyOutcomes,
+            'data' => $newDailyOutcome,
         ];
 
         try {
