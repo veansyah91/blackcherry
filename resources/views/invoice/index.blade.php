@@ -282,5 +282,6 @@
 @endsection
 
 @section('script')
-    {!! Html::script('/js/income-invoice/index.js') !!}
+    {{-- {!! Html::script('/js/income-invoice/index.js') !!} --}}
+    <script type="text/javascript" src="/js/income-invoice/index.js"></script>
 @endsection

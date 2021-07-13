@@ -50,6 +50,3 @@ Route::put('/user/change-password',[UserController::class, 'setPassword']);
 Route::get('/user-role', [UserController::class, 'setRole'])->name('user-role');
 
 Route::get('/role', [RoleController::class, 'index'])->name('role');
-
-
-

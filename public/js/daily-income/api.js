@@ -18,3 +18,9 @@ const countDailyIncome = () => {
                 .then(res=>res)
                 .catch(err=>err)
 }
+
+const getSingleDailyIncome = () => {
+    return axios.get(`/api/single-daily-income`)
+                .then(res=>res.data.data)
+                .catch(err => err)
+}

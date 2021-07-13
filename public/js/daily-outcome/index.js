@@ -146,9 +146,6 @@ submitForm.addEventListener('click', function(){
     
     if (statusUpdate) {
 
-        console.log('edit');
-        console.log(idDailyOutcome.value);
-
         // input data produk baru ke database
 
         axios.put(`/api/daily-outcome/${idDailyOutcome.value}`, data)
