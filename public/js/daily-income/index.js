@@ -39,6 +39,7 @@ const showDailyIncome = async (start) => {
 }
 
 window.addEventListener('load', async function(){
+    console.log('haloo');
     showDailyIncome(start);
     let countData = await countDailyIncome();
     console.log(countData.data.data);
