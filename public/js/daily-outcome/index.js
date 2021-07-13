@@ -79,7 +79,7 @@ const showData = async () => {
                 let totalData = 0;
                 data.map(data => {
                     let currency = new Number(data.jumlah).toLocaleString("id-ID");
-                    totalData += data.jumlah;
+                    totalData += parseInt(data.jumlah);
                     $('#table-body')
                     .append(`<tr>
                                 <th scope="row">
@@ -94,7 +94,7 @@ const showData = async () => {
                             </tr>`)
                 })
                 let currencyTotal = new Number(totalData).toLocaleString("id-ID");
-                total.innerText = currencyTotal;
+                total.innerText = `Rp. ${currencyTotal}`;
 
             }
         })

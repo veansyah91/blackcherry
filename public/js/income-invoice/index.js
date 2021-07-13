@@ -49,8 +49,8 @@ const setInvoiceNumber = () => {
             .then(response => {
                 
                 if (response.data.data) {
-                    nomorNota.value = response.data.data.nomor + 1;
-                    keteranganNomorNota.innerText = response.data.data.nomor + 1;
+                    nomorNota.value = parseInt(response.data.data.nomor) + 1; 
+                    keteranganNomorNota.innerText = parseInt(response.data.data.nomor) + 1;
                 } else {
                     nomorNota.value = 1;
                     keteranganNomorNota.innerText = 1;
