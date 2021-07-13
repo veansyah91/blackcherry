@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+class storeInvoice {
+    public $id;
+    public $nomor;
+    public $jumlah;
+    public $status;
+    public $nama;
+}
+
 class InvoiceController extends Controller
 {
     public function getToday()
@@ -21,9 +29,23 @@ class InvoiceController extends Controller
                         ->select('invoices.id','invoices.nomor', 'invoices.jumlah', 'invoices.status', 'customers.nama')
                         ->get();
 
+        $newInvoices = [];
+
+        $i = 0;
+        foreach ($invoices as $invoice) {
+            $newInvoices[$i] = new storeInvoice;
+            $newInvoices[$i]->id = $invoice->id;
+            $newInvoices[$i]->nomor = $invoice->nomor;
+            $newInvoices[$i]->jumlah = $invoice->jumlah ? (int)$invoice->jumlah : 0;
+            $newInvoices[$i]->status = $invoice->status;
+            $newInvoices[$i]->nama = $invoice->nama;
+
+            $i++;
+        }
+
         $response = [
             'message' => 'Berhasil Mendapatkan Invoice Hari Ini',
-            'data' => $invoices,
+            'data' => $newInvoices,
         ];
 
         try {
@@ -36,6 +58,8 @@ class InvoiceController extends Controller
     public function getInvoiceNumber()
     {
         $lastNumberInvoice = Invoice::select('nomor')->orderBy('created_at', 'desc')->first();
+
+        $lastNumberInvoice->nomor = (int)$lastNumberInvoice->nomor;
         
         $response = [
             'message' => 'Berhasil Mendapatkan Nomor Invoice',

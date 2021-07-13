@@ -47,7 +47,7 @@ const confirmModal = document.getElementById('confirm-modal');
 const setInvoiceNumber = () => {
     axios.get('/api/get-invoice-number')
             .then(response => {
-                
+                console.log(response.data.data.nomor);
                 if (response.data.data) {
                     nomorNota.value = parseInt(response.data.data.nomor) + 1; 
                     keteranganNomorNota.innerText = parseInt(response.data.data.nomor) + 1;
@@ -140,7 +140,6 @@ const showToday = () => {
                                     </td>
                                 </tr>`)
                     })
-                    console.log(typeof(total));
                     let currencyTotalToday =  new Number(total).toLocaleString("id-ID");
                     totalToday.innerText = currencyTotalToday;
                 }
