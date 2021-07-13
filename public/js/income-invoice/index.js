@@ -122,7 +122,7 @@ const showToday = () => {
                         let color = invoice.status == 'belum' ? 'text-danger' : 'text-success';
 
                         let visible = invoice.status == 'belum' ? 'd-block' : 'd-none';
-                        total += invoice.jumlah;
+                        total += parseInt(invoice.jumlah);
 
                         $('#detail-table')
                         .append(`<tr>
