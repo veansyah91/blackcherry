@@ -12,6 +12,13 @@ class newData {
     public $sum;
 }
 
+class newDailyOutcome{
+    public $id;
+    public $jumlah;
+    public $keterangan;
+    public $tanggal;
+}
+
 class DailyOutcomeController extends Controller
 {
     public function index()
@@ -20,6 +27,22 @@ class DailyOutcomeController extends Controller
         $date = Date('Y-m-d');
 
         $dailyOutcomes = DailyOutcome::where('tanggal', $date)->get();
+
+        $newDailyOutcome = [];
+        $i = 0;
+        
+        foreach ($dailyOutcomes as $dailyOutcome) {
+            # code...
+            $newDailyOutcome[$i] = new newDailyOutcome;
+            $newDailyOutcome[$i]->id = $dailyOutcome->id;
+            $newDailyOutcome[$i]->jumlah = (int)$dailyOutcome->jumlah;
+            $newDailyOutcome[$i]->keterangan = $dailyOutcome->keterangan;
+            $newDailyOutcome[$i]->tanggal = $dailyOutcome->tanggal;
+
+
+            $i++;
+
+        }
 
         $response = [
             'message' => 'Berhasil Mengambil Data Pengeluaran',
