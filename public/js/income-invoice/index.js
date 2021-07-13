@@ -122,7 +122,7 @@ const showToday = () => {
                         let color = invoice.status == 'belum' ? 'text-danger' : 'text-success';
 
                         let visible = invoice.status == 'belum' ? 'd-block' : 'd-none';
-                        total += parseInt(invoice.jumlah);
+                        total += invoice.jumlah ? parseInt(invoice.jumlah) : 0;
 
                         $('#detail-table')
                         .append(`<tr>
@@ -140,6 +140,7 @@ const showToday = () => {
                                     </td>
                                 </tr>`)
                     })
+                    console.log(typeof(total));
                     let currencyTotalToday =  new Number(total).toLocaleString("id-ID");
                     totalToday.innerText = currencyTotalToday;
                 }
