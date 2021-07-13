@@ -282,5 +282,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/income-invoice/index.js') }}"></script>
+    <script src="{{ asset('/js/income-invoice/index.js') }}"></script>
 @endsection
