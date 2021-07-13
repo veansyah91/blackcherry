@@ -282,5 +282,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('/js/income-invoice/index.js') }}"></script>
+    {!! Html::script('js/income-invoice/index.js') !!}
 @endsection
