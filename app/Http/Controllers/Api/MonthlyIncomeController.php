@@ -12,7 +12,7 @@ class MonthlyIncomeController extends Controller
 {
     public function index()
     {
-        $data = MonthlyIncome::all();
+        $data = MonthlyIncome::orderBy('created_at', 'desc')->get();
 
         $response = [
             'message' => 'Berhasil Mengubah Data Pemasukan Bulanan',

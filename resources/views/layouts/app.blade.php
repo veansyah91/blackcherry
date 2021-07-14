@@ -34,6 +34,12 @@
                     <!-- Left Side Of Navbar -->
                     @auth
                         <ul class="navbar-nav mr-auto">
+                            @role('admin')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
+                            @endrole
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle{{ request()->is('master/*') ? ' active' :'' }}" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Master</a>
                                 <div class="dropdown-menu">
@@ -65,7 +71,6 @@
                             </li>
                         </ul>
                     @endauth
-                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

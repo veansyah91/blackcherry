@@ -11,13 +11,8 @@
                         <div class="col-8 my-auto">
                             <strong id="header-form">Simpan Pemasukan Harian</strong>
                         </div>
-                        {{-- <div class="col-md-4 text-right d-none" id="cancel-edit-form">
-                            <button class="btn btn-success btn-sm" id="cancel-button">Batal</button>
-                        </div> --}}
                     </div>
 
-                    
-                    
                 </div>
 
                 <div class="card-body">

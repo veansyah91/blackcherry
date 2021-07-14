@@ -13,7 +13,7 @@ const submitForm = document.getElementById('submit-form');
 const statusAlert = document.getElementById('status-alert');
 
 // state 
-let indexTable = 1;
+
 
 const showData = () => {
     axios.get(`/api/monthly-outcome`)
@@ -21,6 +21,8 @@ const showData = () => {
                 console.log(response.data);
                 let data = response.data.data;
 
+                $('#table-body').empty();
+                let indexTable = 1;
                 if (data.length < 1) {
                     $('#table-body')
                     .append(`<tr>
@@ -66,6 +68,7 @@ submitForm.addEventListener('click', function(){
     axios.put('/api/monthly-outcome', data)
             .then(response => {
                 console.log(response.data);
+                showData();
             })
             .catch(err => {
                 if (err) {
