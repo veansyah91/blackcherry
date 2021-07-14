@@ -205,7 +205,7 @@ const hapusData = (id) => {
 }
 
 window.addEventListener('load', function(){
-    console.log('haloo');
+    // console.log('haloo');
     setInvoiceNumber();
     resetDetail();
     showToday();
