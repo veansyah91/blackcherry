@@ -9,6 +9,7 @@ const labels = [];
 
 const dataIncomes = [];
 const dataOutcomes = [];
+const profits = [];
 
 const data = {
     labels: labels,
@@ -24,6 +25,12 @@ const data = {
             backgroundColor: 'rgb(227,52,47)',
             borderColor: 'rgb(227,52,47)',
             data: dataOutcomes,
+        },
+        {
+            label: 'Profit',
+            backgroundColor: 'rgb(40,167,69)',
+            borderColor: 'rgb(40,167,69)',
+            data: profits,
         },
         
     ]
@@ -61,7 +68,8 @@ window.addEventListener('load', async function()
     i = 0;
     outcomes.map(outcome => {
         dataOutcomes[i] = outcome.jumlah;
-        labels[i] = outcome.bulan
+        labels[i] = outcome.bulan;
+        profits[i] = incomes[i].jumlah - outcome.jumlah;
         i++;
     })
 
