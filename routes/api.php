@@ -59,8 +59,6 @@ Route::get('/daily-outcome-detail', [DailyOutcomeController::class, 'detail']);
 // api monthly outcome 
 Route::get('/monthly-outcome', [MonthlyOutcomeController::class, 'index']);
 Route::put('/monthly-outcome', [MonthlyOutcomeController::class, 'update']);
-// dashboard
-Route::get('/monthly-outcome', [MonthlyOutcomeController::class, 'getPerMonth']);
 
 // api invoice
 Route::get('/get-invoice-number', [InvoiceController::class, 'getInvoiceNumber']);
