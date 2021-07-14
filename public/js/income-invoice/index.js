@@ -2,6 +2,7 @@
 let nomorNotaState = 0;
 let totalInvoice = 0;
 let invoice = {};
+
 // button
 const newInvoice = document.getElementById('new-invoice-button');
 const bayar = document.getElementById('bayar-button');
@@ -121,8 +122,12 @@ const showToday = () => {
                         
                         let color = invoice.status == 'belum' ? 'text-danger' : 'text-success';
 
-                        let visible = invoice.status == 'belum' ? 'd-block' : 'd-none';
+                        let paid = invoice.status === 'belum' ? false : true;
+
                         total += invoice.jumlah ? parseInt(invoice.jumlah) : 0;
+
+                        let btnStatus = invoice.status == 'belum' ? 'btn-secondary' : 'btn-success';
+                        let cekStatus = invoice.status == 'belum' ? 'bayar' : 'detail';
 
                         $('#detail-table')
                         .append(`<tr>
@@ -133,9 +138,9 @@ const showToday = () => {
                                     <td class="${color}">
                                         ${status}
                                     </td>
-                                    <td class="${visible}">
-                                        <button class="btn btn-sm btn-secondary" onclick="showDetail(${invoice.id}, ${invoice.nomor})">
-                                            Bayar
+                                    <td>
+                                        <button class="btn btn-sm ${btnStatus}" onclick="showDetail(${invoice.id}, ${invoice.nomor}, ${paid})">
+                                            ${cekStatus}
                                         </button>
                                     </td>
                                 </tr>`)
@@ -167,10 +172,15 @@ const updateInvoiceStatus = (data) => {
             })
 }
 
-const showDetail = async (invoiceId, nomorNota) => {
+const showDetail = async (invoiceId, nomorNota, paid) => {
 
     detailTodayCard.classList.add('d-none');
     detailCard2.classList.remove('d-none');
+
+    console.log(paid);
+
+    paid ? bayar2.classList.add('d-none'):bayar2.classList.remove('d-none');
+
     let getInvoices = await getInvoiceDetails(invoiceId);
     nomorNotaState = nomorNota;
     let i = 1;
