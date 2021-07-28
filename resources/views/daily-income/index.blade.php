@@ -10,10 +10,13 @@
                     <div class="row justify-between d-flex">
                         <div class="col-8 my-auto">
                             <strong id="header-form">Simpan Pemasukan Harian</strong>
+                            
                         </div>
                     </div>
 
                 </div>
+
+                
 
                 <div class="card-body">
                     
@@ -43,19 +46,6 @@
                     
                 </div>
 
-                <div class="alert alert-success d-none" role="alert" id="success-alert">
-                    <div class="row justify-between">
-                        <div class="col-8">
-                            <Strong>Berhasil</Strong> <span id="status-alert"></span> Pengeluaran.
-                        </div>
-                        <div class="col-4 text-right">
-                            <button type="button" class="close" id="close-success-alert">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="card-body">
 
                     <table class="table">
@@ -70,22 +60,32 @@
                         </tbody>
                     </table>
                     
+                    <div class="text-center d-none" id="show-more-parent">
+                        <button class="btn btn-primary w-100" id="btn-show-more">Tampilkan Lebih</button>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="card-footer">
+        <div class="col-lg-5  mt-2 mt-md-0 d-none" id="detail-content">
+            <div class="card">
+                <div class="card-header">
 
                     <div class="row justify-between d-flex">
                         <div class="col-md-6 my-auto text-center text-lg-left my-sm-1 mb-sm-2">
-                            <strong>{{ __('Total') }}</strong>
+                            <strong>Rincian Pemasukan Harian</strong>
                         </div>
-
-                        <div class="col-md-6 my-auto text-center text-md-right mt-sm-1 mb-sm-2">
-                            <h4 id="total">
-
-                            </h4>
+                        <div class="col-md-6 my-auto text-center text-lg-right my-sm-1 mb-sm-2">
+                            <button class="btn btn-sm btn-success" id="cancel-show-detail">Kembali</button>
                         </div>
                     </div>
-
+                    
+                </div>
+                
+                <div class="card-body" id="detail-content-body">
+                    <div class="spinner-border" role="status">
+                        
+                    </div>
                 </div>
             </div>
         </div>

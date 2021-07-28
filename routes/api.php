@@ -74,6 +74,7 @@ Route::delete('/get-invoice-detail/{invoiceDetail}',[InvoiceDetailController::cl
 Route::get('/daily-income',[DailyIncomeController::class, 'index']);
 Route::get('/count-daily-income',[DailyIncomeController::class, 'countData']);
 Route::put('/daily-income',[DailyIncomeController::class, 'update']);
+Route::get('/daily-income/{dailyIncome}',[DailyIncomeController::class, 'show']);
 
 // api monthly income
 Route::get('/monthly-income', [MonthlyIncomeController::class, 'index']);
